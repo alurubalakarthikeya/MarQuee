@@ -22,36 +22,25 @@ class OctalBinary {
         }
         return Integer.parseInt(converted);
     }
-    static int BinarytoOctal(int binary){
-        int num = binary;
+    static int BinaryOctal(int number, boolean isBinary){
+        int num = number;
         int deci = 0;
         int n = 0;
         while(num>0){
             int temp = num%10;
-            deci += temp*Math.pow(2, n);
+            if(isBinary){
+                deci += temp*Math.pow(2, n);
+            } else {
+                deci += temp*Math.pow(8, n);
+            }
             num = num/10;
             n++;
         }
-        char[] octal = new char[20];
-        int i=0;
-        while(deci>0){
-            int temp = deci%8;
-            octal[i++] = (char)(temp + '0');
-            deci = deci/8;
+        if(isBinary){
+            return toOctal(deci);
+        } else {
+            return toBinary(deci);
         }
-        return Integer.parseInt(new String(octal, 0, i));
-    }
-    static int OctaltoBinary(int octal){
-        int num = octal;
-        int deci = 0;
-        int n = 0;
-        while(num>0){
-            int temp = num%10;
-            deci += temp*Math.pow(8, n);
-            num = num/10;
-            n++;
-        }
-        return toBinary(deci);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -59,7 +48,7 @@ class OctalBinary {
         int octal;
         int binary;
         int choice;
-        System.out.println("Choose an operation:\n 1) Decimal to Octal\n 2) Decimal to Binary\n 3) Octal to Binary\n 4) Binary to Octal\n");
+        System.out.println("Choose an operation:\n 1) Decimal to Octal\n 2) Decimal to Binary\n 3) Binary to Octal\n 4) Octal to Binary\n");
         choice = sc.nextInt();
         switch(choice){
             case 1:
@@ -75,12 +64,12 @@ class OctalBinary {
             case 3:
                 System.out.println("Enter a Binary: ");
                 binary = sc.nextInt();
-                System.out.printf("The converted octal is: %d", BinarytoOctal(binary));
+                System.out.printf("The converted octal is: %d", BinaryOctal(binary, true));
                 break;
             case 4:
                 System.out.println("Enter an Octal: ");
                 octal = sc.nextInt();
-                System.out.printf("The converted binary is: %d", OctaltoBinary(octal));
+                System.out.printf("The converted binary is: %d", BinaryOctal(octal, false));
                 break;
             default:
                 System.out.println("Enter a valid choice please");
