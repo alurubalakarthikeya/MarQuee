@@ -1,0 +1,195 @@
+Any number in it's base is written 10
+
+binary	2	10
+octal	8	10
+hexa	6	10
+decimal	10	10
+hd	16	10
+
+
+any power in any base
+1 followed by 0's
+			2		8		16
+1			1		1		1	
+10			2		8		16
+100			4		64		256
+1000			8		512		4096
+10000			16		4096		65536
+100000			32		32768		????????
+
+Before tea
+Write a program to accept an integer and print the octal form of the number, do not use any inbuilt functions
+
+1 <= n <= 10^5
+
+12345
+
+			8 | 12345
+                           ------
+                        8 |  1544	3		0 + 3 * 1
+			  -------
+                        8 |  193	0		3 + 0 * 10
+			  --------
+          		8 |   24	1		3 + 1 * 100
+			  --------
+			8 |    3	0		103 + 0 * 1000
+			  -------
+					3  		103 + 3 * 10000
+
+Write a program to accept an integer and print the binary form of the number, do not use any inbuilt functions
+
+1 <= n <= 10^3
+
+
+Write a program to accept an integer which is in octal form and print the binary form of the number, do not use any inbuilt functions
+
+Constraint : 1 to 7777 would be the input range 
+Input : 3421
+         11100010001
+Output : 11100010001
+0		000
+1		001
+2		010
+3		011
+4		100
+5		101
+6		110
+7		111
+
+6525
+
+6
+110
+5
+110 101
+2
+110101010
+5
+110101010101
+
+5
+101
+2
+010101
+5
+101010101
+6
+110101010101
+Write a program to accept an integer which is in binary form and print the octal form of the number, do not use any inbuilt functions
+
+Constraint : 1 to 111111111111111 would be the input range 
+Input : 10 101 011 010 111
+Output : 25327
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Recursion
+~~~~~~~~
+wrapper function - interface of the user
+data_type wrapper_function ( input(s))
+{
+	// handle arm length solutions
+	
+	// set the necessary environment
+
+	// call the helper function - recursive, pass the environment, initiate
+
+}
+pd ( 10 );
+void pd ( int base )
+{
+   // handle arm length
+   if ( base == 1)
+      return;
+   if ( base == 2 )
+     s.o.p 10 , return
+   if ( base %2 == 1) return;
+    
+     Boolean [] used = new boolean[ base ];
+    
+
+     pd_helper ( base, used, 0, 1)
+
+
+}
+Find the sum of first 'n' natural numbers
+
+sonn( n  )
+sonn ( 10 ) = 10 + sonn(9)
+sonn ( n ) = n + sonn( n - 1)
+
+
+Factorial
+f(n) = n * f(n-1)
+
+
+Number of Digits
+
+nod(n) = 1+ nod(n/10)
+nod ( 6974 ) = 1 + nod ( 6974 / 10);
+
+
+Sum of Digits
+sod ( n ) = n%10 + sod(n/10)
+sod ( 6974 ) = 6974%10 + sod ( 6974/10);
+6974
+4796
+4*1000 + 7*100 + 9*10 + 6*1
+
+6974
+
+6974,1000
+4*1000 + myself( 6974/10,1000/10)
+                  697 , 100
+                   7 * 100 + ( 697/10, 100/10)
+                                69,10
+                                  9*10 + my(69/10, 10/10)
+                                             6     1
+                                                6*1 + my(6/10,1/10)
+                                                           0  0=>0
+                                 
+
+Reverse a number
+reverse ( 6974 )
+{
+    // handle arm length
+    if ( n < 10 ) return n;
+    if ( n < 100 ) (n%10)*10+n/10;
+
+    // set the required env
+    find the power to pass
+
+   // call helper  - recursive, pass the env, initiate
+
+   rev_helper ( n, power );
+
+}
+int  rev_helper( int n, int p)
+{
+  // base case
+   if (n == 0 )
+       return 0;
+  return n % 10 * p + rev_helper( n/10, p/10);
+
+
+}
+
+
+
+a*b = gcd(a,b) * lcm(a,b)
+GCD
+gcd ( n1, n2 ) = gcd( n2, n1%n2)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linked Lists Discusssssion
+Back-tracking Introduction
+
+
+
+
+
+
+
+
+
+
+
